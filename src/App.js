@@ -95,7 +95,7 @@ function Home() {
   React.useEffect(
     () =>
       fetch(
-        "https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=127857"
+        "https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000"
       )
         .then((response) => response.json())
         .then((data) => {
@@ -160,8 +160,8 @@ function Home() {
     if (value === "") {
       const url =
         city === "all"
-          ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=127857`
-          : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=127857&city=${city}&q=`;
+          ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000`
+          : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000&city=${city}&q=`;
       await fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -170,8 +170,8 @@ function Home() {
     } else if (value !== "") {
       const url =
         city === "all"
-          ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=127857&q=${value}`
-          : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=127857&q=${value}&city=${city}`;
+          ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000&q=${value}`
+          : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000&q=${value}&city=${city}`;
       await fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -186,8 +186,8 @@ function Home() {
     setCity(event.target.value);
     const url =
       event.target.value === "all"
-        ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=127857`
-        : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches/?limit=127857&city=${event.target.value}`;
+        ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000`
+        : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches/?limit=1000&city=${event.target.value}`;
     await fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -274,6 +274,9 @@ function Home() {
                 count={branches.length}
                 page={page}
                 onChangePage={handleChangePage}
+                labelDisplayedRows={({ from, to, page }) =>
+                  `${from}-${to} of Page ${page + 1}`
+                }
                 rowsPerPage={rowsPerPage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
               />
@@ -339,6 +342,9 @@ function Home() {
                 count={branches.length}
                 page={page}
                 onChangePage={handleChangePage}
+                labelDisplayedRows={({ from, to, page }) =>
+                  `${from}-${to} of Page ${page + 1}`
+                }
                 rowsPerPage={rowsPerPage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
               />
