@@ -256,10 +256,10 @@ function Home() {
         className="change"
         component={Paper}
         style={{
-          width: "80%",
           marginTop: "60px",
           marginBottom: "30px",
-          marginLeft: "150px",
+          // width: "80%",
+          // marginLeft: "150px",
         }}
       >
         <Table
@@ -361,10 +361,10 @@ function Home() {
         className="change"
         component={Paper}
         style={{
-          width: "80%",
           marginTop: "60px",
           marginBottom: "30px",
-          marginLeft: "150px",
+          // width: "80%",
+          // marginLeft: "150px",
         }}
       >
         <Table
