@@ -226,7 +226,7 @@ function Home() {
           borderRadius: "5px",
           paddingLeft: "15px",
         }}
-        placeholder="Search Banks"
+        placeholder="Search Bank details across IFSC, Branch, Address, City, District and State fields"
         value={value}
         onChange={Timer}
       />
