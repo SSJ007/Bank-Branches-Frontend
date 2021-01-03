@@ -81,7 +81,7 @@ function Home() {
   React.useEffect(
     () =>
       fetch(
-        "https://sanskar-fyle-challenge-backend.herokuapp.com/api/banks?limit=170"
+        "https://bank-branch-details-backend.herokuapp.com/api/banks?limit=170"
       )
         .then((response) => response.json())
         .then((data) => {
@@ -95,7 +95,7 @@ function Home() {
   React.useEffect(
     () =>
       fetch(
-        "https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000"
+        "https://bank-branch-details-backend.herokuapp.com/api/branches?limit=1000"
       )
         .then((response) => response.json())
         .then((data) => {
@@ -160,8 +160,8 @@ function Home() {
     if (value === "") {
       const url =
         city === "all"
-          ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000`
-          : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000&city=${city}&q=`;
+          ? `https://bank-branch-details-backend.herokuapp.com/api/branches?limit=1000`
+          : `https://bank-branch-details-backend.herokuapp.com/api/branches?limit=1000&city=${city}&q=`;
       await fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -170,8 +170,8 @@ function Home() {
     } else if (value !== "") {
       const url =
         city === "all"
-          ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000&q=${value}`
-          : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000&q=${value}&city=${city}`;
+          ? `https://bank-branch-details-backend.herokuapp.com/api/branches?limit=1000&q=${value}`
+          : `https://bank-branch-details-backend.herokuapp.com/api/branches?limit=1000&q=${value}&city=${city}`;
       await fetch(url)
         .then((response) => response.json())
         .then((data) => {
@@ -186,8 +186,8 @@ function Home() {
     setCity(event.target.value);
     const url =
       event.target.value === "all"
-        ? `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches?limit=1000`
-        : `https://sanskar-fyle-challenge-backend.herokuapp.com/api/branches/?limit=1000&city=${event.target.value}`;
+        ? `https://bank-branch-details-backend.herokuapp.com/api/branches?limit=1000`
+        : `https://bank-branch-details-backend.herokuapp.com/api/branches/?limit=1000&city=${event.target.value}`;
     await fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -443,7 +443,7 @@ function Home() {
           fontWeight: "400",
         }}
       >
-        Fyle Coding Challenge - Bank Branches
+       Bank Branches
       </h1>
       <main style={{ display: "flex", justifyContent: "space-between" }}>
         <Button
